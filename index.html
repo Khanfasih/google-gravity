@@ -35,13 +35,32 @@
         <center>
             <img id="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width="272" height="92" alt="Google">
             <div class="search-box">
-                <input type="text" autofocus>
+                <input type="text" value="google anti-gravity" autofocus>
             </div>
         </center>
     </div>
 
-    <!-- Loading Box2D Physics Engine for Gravity Effect -->
-    <script src="box-2d.js"></script>
-    <script src="gravity.js"></script>
+    <!-- Matter.js Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            var Engine = Matter.Engine,
+                Render = Matter.Render,
+                World = Matter.World,
+                Bodies = Matter.Bodies,
+                Mouse = Matter.Mouse,
+                MouseConstraint = Matter.MouseConstraint;
+
+            var engine = Engine.create();
+            var logo = document.getElementById('logo');
+            var search = document.querySelector('.search-box');
+
+            // Add boundaries & interactive gravity physics
+            var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 30, window.innerWidth, 60, { isStatic: true });
+            World.add(engine.world, [ground]);
+
+            Engine.run(engine);
+        });
+    </script>
 </body>
 </html>
