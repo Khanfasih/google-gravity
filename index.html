@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <title>Google Gravity</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #ffffff;
+            font-family: arial, sans-serif;
+        }
+        #logo {
+            display: block;
+            margin: 150px auto 20px auto;
+        }
+        .search-box {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 450px;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <center>
+            <img id="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width="272" height="92" alt="Google">
+            <div class="search-box">
+                <input type="text" autofocus>
+            </div>
+        </center>
+    </div>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <h1 class="box2d">Tech Inscribed</h1>
-        </div>
-        <script type="text/javascript" src="box-2d.js"></script>
-        <script type="text/javascript" src="gravity.js"></script>
-    </body>
+    <!-- Loading Box2D Physics Engine for Gravity Effect -->
+    <script src="box-2d.js"></script>
+    <script src="gravity.js"></script>
+</body>
 </html>
